@@ -19,10 +19,6 @@
 
 <script setup>
 import { onMounted, onUnmounted, ref } from 'vue'
-import { useDarkMode } from '@/composables/useDarkMode'
-
-// Initialize dark mode
-useDarkMode()
 
 // Global session expiration notification
 const sessionSnackbar = ref({

@@ -10,8 +10,8 @@
                 <!-- Logo -->
                 <div class="text-center mb-8">
                   <v-img
-                    :src="isDark ? '/owl_logo_white.png' : '/owl_logo.png'"
-                    alt="Owlculus Logo"
+                    src="/pdrm_logo.png"
+                    alt="PDRM Logo"
                     max-height="200"
                     contain
                     class="mx-auto"
@@ -204,12 +204,10 @@
 <script setup>
 import { ref, reactive, computed, onMounted } from 'vue'
 import { useRouter, useRoute } from 'vue-router'
-import { useDarkMode } from '../composables/useDarkMode'
 import { inviteService } from '../services/invite'
 
 const router = useRouter()
 const route = useRoute()
-const { isDark } = useDarkMode()
 
 const isLoading = ref(false)
 const isValidatingToken = ref(true)

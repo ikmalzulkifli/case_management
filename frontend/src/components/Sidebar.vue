@@ -1,14 +1,20 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  <v-navigation-drawer v-model="drawer" :width="256" class="owlculus-sidebar border-e" permanent>
+  <v-navigation-drawer
+    v-model="drawer"
+    :width="256"
+    class="owlculus-sidebar"
+    permanent
+    style="background-color: #F8F9FA; border-right: 1px solid #E0E0E0;"
+  >
     <!-- Logo Section -->
     <v-container class="pa-4">
       <div class="d-flex justify-center align-center" style="height: 120px">
         <v-img
-          :src="isDark ? '/owl_logo_white.png' : '/owl_logo.png'"
-          alt="Owlculus Logo"
-          max-height="140"
-          max-width="220"
+          src="/pdrm_logo.png"
+          alt="PDRM Logo"
+          max-height="120"
+          max-width="200"
           contain
         />
       </div>
@@ -25,9 +31,10 @@
         :prepend-icon="item.icon"
         :title="item.name"
         color="primary"
-        rounded="xl"
-        class="ma-1"
-        min-height="56"
+        rounded="lg"
+        class="ma-1 nav-item"
+        min-height="48"
+        :active-class="'nav-item-active'"
       />
     </v-list>
 
@@ -35,16 +42,6 @@
     <template #append>
       <v-divider />
       <v-container class="pa-2">
-        <v-btn
-          :prepend-icon="isDark ? 'mdi-white-balance-sunny' : 'mdi-moon-waning-crescent'"
-          :text="isDark ? 'Light Mode' : 'Dark Mode'"
-          variant="text"
-          block
-          size="default"
-          class="mb-2 justify-start"
-          @click="toggleDark"
-        />
-
         <v-btn
           prepend-icon="mdi-logout"
           text="Logout"
@@ -64,12 +61,10 @@
 import { ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
 import { useAuthStore } from '@/stores/auth'
-import { useDarkMode } from '@/composables/useDarkMode'
 
 const drawer = ref(true)
 const router = useRouter()
 const authStore = useAuthStore()
-const { isDark, toggleDark } = useDarkMode()
 
 const navigationItems = computed(() => {
   // Don't show any items until auth is initialized
@@ -77,24 +72,19 @@ const navigationItems = computed(() => {
     return []
   }
 
-  const items = [{ name: 'Cases', href: '/cases', icon: 'mdi-folder-outline' }]
+  const items = [
+    { name: 'Dashboard', href: '/', icon: 'mdi-view-dashboard' },
+    { name: 'Cases', href: '/cases', icon: 'mdi-folder-outline' },
+    { name: 'Entities', href: '/entities', icon: 'mdi-account-group' },
+    { name: 'Evidence', href: '/evidence', icon: 'mdi-file-document' },
+    { name: 'Hunts', href: '/hunts', icon: 'mdi-target' },
+    { name: 'Plugins', href: '/plugins', icon: 'mdi-wrench-outline' },
+  ]
 
   // Add Clients for admin users
   if (authStore.requiresAdmin()) {
     items.push({ name: 'Clients', href: '/clients', icon: 'mdi-account-group-outline' })
   }
-
-  items.push(
-    { name: 'Tasks', href: '/tasks', icon: 'mdi-checkbox-marked-circle-outline' },
-    { name: 'Plugins', href: '/plugins', icon: 'mdi-wrench-outline' },
-  )
-
-  // Add Hunts for non-analyst users
-  if (authStore.user?.role !== 'Analyst') {
-    items.push({ name: 'Hunts', href: '/hunts', icon: 'mdi-target' })
-  }
-
-  items.push({ name: 'Strixy (WIP)', href: '/strixy', icon: 'mdi-robot' })
 
   // Add Admin settings for admin users
   if (authStore.requiresAdmin()) {
@@ -115,10 +105,32 @@ const handleLogout = () => {
 
 <style scoped>
 /* Fix text clipping in navigation items and increase font size */
-.v-list-item :deep(.v-list-item-title) {
+.nav-item :deep(.v-list-item-title) {
   line-height: 1.2;
   padding-bottom: 2px;
-  font-size: medium;
+  font-size: 14px;
   font-weight: 500;
+  color: #616161;
+}
+
+.nav-item :deep(.v-list-item__prepend) {
+  color: #757575;
+}
+
+.nav-item:hover {
+  background-color: #F5F5F5;
+}
+
+.nav-item-active {
+  background-color: #E3F2FD !important;
+}
+
+.nav-item-active :deep(.v-list-item-title) {
+  color: #1976D2 !important;
+  font-weight: 600;
+}
+
+.nav-item-active :deep(.v-list-item__prepend) {
+  color: #1976D2 !important;
 }
 </style>

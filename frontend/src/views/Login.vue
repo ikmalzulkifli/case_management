@@ -9,8 +9,8 @@
               <!-- Logo -->
               <div class="text-center mb-8">
                 <v-img
-                  :src="isDark ? '/owl_logo_white.png' : '/owl_logo.png'"
-                  alt="Owlculus Logo"
+                  src="/pdrm_logo.png"
+                  alt="PDRM Logo"
                   class="mx-auto"
                   contain
                   max-height="200"
@@ -69,11 +69,9 @@
 import { reactive, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useAuthStore } from '../stores/auth'
-import { useDarkMode } from '../composables/useDarkMode'
 
 const router = useRouter()
 const authStore = useAuthStore()
-const { isDark } = useDarkMode()
 const isLoading = ref(false)
 const error = ref(null)
 const form = ref(null)

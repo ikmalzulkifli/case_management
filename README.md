@@ -36,3 +36,52 @@ If you find the app useful and feel so inclined, please consider fueling my futu
 below. Anything and everything helps and is greatly appreciated :)
 
 <a href="https://www.buymeacoffee.com/be0vlk" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
+
+Using Docker (Recommended)
+
+  Start all services:
+  cd "C:\Users\User\OneDrive\Documents\GitHub\case_management"      
+  docker compose up -d
+
+  Check service status:
+  docker compose ps
+
+  View logs:
+  docker compose logs
+
+  Stop services:
+  docker compose down
+
+Frontend Only:
+
+  cd "C:\Users\User\OneDrive\Documents\GitHub\case_management\fr    
+  ontend"
+  npm install
+  npm run dev
+
+  Backend Only:
+
+  cd "C:\Users\User\OneDrive\Documents\GitHub\case_management"      
+  docker compose exec backend python main.py
+
+  Check Status
+
+  To verify everything is running:
+  docker compose ps
+
+  Stop the Application
+
+  When you're done:
+  docker compose down
+
+  Troubleshooting
+
+  If you encounter issues:
+  1. Make sure Docker Desktop is running
+  2. Check port availability (3000, 8000)
+  3. View logs: docker compose logs
+  4. Restart services: docker compose restart
+
+  The Docker approach will automatically set up the database,       
+  backend, and frontend services with all dependencies
+  installed.
