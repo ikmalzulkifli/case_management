@@ -1,17 +1,16 @@
-# Owlculus
+# PDRM Case Management
 
 <p align="center">
-  <img src="https://i.imgur.com/Cuf4hMK.png" />
+  <img src="/pdrm_logo.png" alt="PDRM Logo" />
 </p>
 
-Owlculus is a comprehensive OSINT case management platform built for solo work or investigative teams. Manage cases,
+PDRM Case Management is a comprehensive OSINT case management platform built for solo work or investigative teams. Manage cases,
 collaborate, and run OSINT tools directly in your browser.
 
 **100% free and open-source forever, no matter what.**
 
-> **Active Development**: Note that Owlculus is under active development. Run `git pull` in the repo root regularly for
-> updates. Never deploy the "
-> dev" branch to production!
+> **Active Development**: Note that PDRM Case Management is under active development. Run `git pull` in the repo root regularly for
+> updates. Never deploy the "dev" branch to production!
 
 ## Features
 
@@ -28,6 +27,15 @@ collaborate, and run OSINT tools directly in your browser.
 
 ## Documentation
 The information you need to get started is hosted right here on GitHub in the [Wiki](https://github.com/be0vlk/owlculus/wiki) but if you need any additional guidance, please feel free to open a [Discussion](https://github.com/be0vlk/owlculus/discussions)
+
+## UI Theme
+
+PDRM Case Management features a modern light theme interface with:
+- Clean, professional design optimized for investigative work
+- Blue accent colors (#1976D2) for visual hierarchy
+- Light gray backgrounds (#FAFAFA) for reduced eye strain
+- Responsive layout that works on desktop and mobile devices
+- Intuitive navigation with Dashboard, Cases, Entities, Evidence, Hunts, Plugins, and Settings
 
 ## Contributing
 GitHub Issues and Pull Requests always welcome! Oh and make sure to at least read the CONTRIBUTING.md readme first for some basic guidelines.
@@ -78,10 +86,17 @@ Frontend Only:
 
   If you encounter issues:
   1. Make sure Docker Desktop is running
-  2. Check port availability (3000, 8000)
+  2. Check port availability (8081, 8000)
   3. View logs: docker compose logs
   4. Restart services: docker compose restart
 
   The Docker approach will automatically set up the database,       
   backend, and frontend services with all dependencies
   installed.
+
+## Access Points
+
+After starting the services:
+- **Frontend**: http://localhost:8081
+- **Backend API**: http://localhost:8000
+- **API Documentation**: http://localhost:8000/docs

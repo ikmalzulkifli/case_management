@@ -55,16 +55,16 @@ python scripts/create_plugin.py api_tool \
 
 ## Plugin Architecture Overview
 
-Owlculus uses a plugin system that consists of:
+PDRM Case Management uses a plugin system that consists of:
 - **Backend Plugin**: Python class that handles the actual tool execution
 - **Frontend Parameter Component**: Vue component for user input (usually not needed - automatic UI handles 95% of cases)
 - **Frontend Result Component**: Vue component for displaying results (usually not needed - automatic fallback handles most cases)
 
-The system automatically discovers and loads plugins based on naming conventions and provides automatic UI generation through `GenericPluginParams.vue` and `PluginResult.vue`.
+The system automatically discovers and loads plugins based on naming conventions and provides automatic UI generation through `GenericPluginParams.vue` and `PluginResult.vue`. The UI follows the PDRM light theme with blue accent colors.
 
 ## Automatic UI System
 
-**Most plugins don't need custom frontend components!** Owlculus provides a sophisticated automatic UI generation system:
+**Most plugins don't need custom frontend components!** PDRM Case Management provides a sophisticated automatic UI generation system:
 
 ### GenericPluginParams.vue
 Automatically generates parameter forms based on your backend plugin's parameter schema:
@@ -226,7 +226,7 @@ self.evidence_category = "Network Assets"  # Evidence storage category
 
 ### 6. Evidence Saving System
 
-Owlculus automatically handles evidence saving for all plugins:
+PDRM Case Management automatically handles evidence saving for all plugins:
 
 #### Automatic Features
 - **Parameter Injection**: `save_to_case` parameter is automatically added to all plugins
@@ -604,7 +604,7 @@ docker compose exec backend pytest backend/tests/plugins/test_mytool_plugin.py
 
 ## API Key Integration
 
-Owlculus provides a centralized, secure API key management system that plugins should use instead of hardcoding keys or relying on environment variables.
+PDRM Case Management provides a centralized, secure API key management system that plugins should use instead of hardcoding keys or relying on environment variables.
 
 ### 1. Retrieving API Keys in Plugins
 

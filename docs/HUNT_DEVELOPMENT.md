@@ -1,10 +1,10 @@
 # Hunt Development Guide
 
-This guide explains how to create custom hunt flows in Owlculus. Hunts are automated workflows that orchestrate multiple OSINT plugins into reusable investigation patterns.
+This guide explains how to create custom hunt flows in PDRM Case Management. Hunts are automated workflows that orchestrate multiple OSINT plugins into reusable investigation patterns.
 
 ## Architecture Overview
 
-Hunts in Owlculus are implemented as Python classes that inherit from `BaseHunt`. The system automatically discovers hunt definitions from the `/backend/app/hunts/definitions/` directory and provides a complete UI for executing and monitoring them.
+Hunts in PDRM Case Management are implemented as Python classes that inherit from `BaseHunt`. The system automatically discovers hunt definitions from the `/backend/app/hunts/definitions/` directory and provides a complete UI for executing and monitoring them.
 
 ### Key Components
 

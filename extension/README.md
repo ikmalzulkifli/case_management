@@ -1,12 +1,12 @@
-# Owlculus Evidence Collector Browser Extension
+# PDRM Evidence Collector Browser Extension
 
-A browser extension that allows you to capture web pages and send them as evidence to your Owlculus case management system.
+A browser extension that allows you to capture web pages and send them as evidence to your PDRM Case Management system.
 
 ## Features
 
 - Capture full HTML content of web pages
 - Automatic removal of scripts and sensitive data
-- Direct upload to Owlculus evidence storage
+- Direct upload to PDRM evidence storage
 - Case selection from available cases
 - Configurable API endpoint
 - JWT-based authentication
@@ -22,14 +22,14 @@ A browser extension that allows you to capture web pages and send them as eviden
 ## Configuration
 
 1. Click the extension icon and then "Open Settings"
-2. Configure your Owlculus API endpoint (e.g., `http://localhost:8000`)
-3. Login with your Owlculus credentials
+2. Configure your PDRM API endpoint (e.g., `http://localhost:8000`)
+3. Login with your PDRM credentials
 4. The extension will remember your authentication
 
 ## Usage
 
 1. Navigate to any web page you want to capture
-2. Click the Owlculus extension icon
+2. Click the PDRM extension icon
 3. Select a case from the dropdown
 4. Optionally modify the title and category
 5. Click "Capture Page"
@@ -54,7 +54,7 @@ The extension uses Chrome Extension Manifest V3 and consists of:
 
 ## API Integration
 
-The extension integrates with Owlculus API endpoints:
+The extension integrates with PDRM API endpoints:
 
 - `POST /api/auth/login` - Authentication
 - `GET /api/users/me` - Get current user
@@ -64,12 +64,12 @@ The extension integrates with Owlculus API endpoints:
 ## Requirements
 
 - Chrome browser (or Chromium-based browser)
-- Running Owlculus backend instance
-- Valid Owlculus user account with appropriate permissions
+- Running PDRM backend instance
+- Valid PDRM user account with appropriate permissions
 
 ## Troubleshooting
 
 - If authentication fails, check that your API endpoint is correct
-- Ensure your Owlculus backend is running and accessible
+- Ensure your PDRM backend is running and accessible
 - Check browser console for detailed error messages
-- Make sure you have at least one case created in Owlculus
+- Make sure you have at least one case created in PDRM
